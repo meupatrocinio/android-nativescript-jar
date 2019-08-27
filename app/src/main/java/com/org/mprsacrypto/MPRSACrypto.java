@@ -1,4 +1,4 @@
-package com.org.myrsacrypto;
+package com.org.mprsacrypto;
 
 import android.util.Base64;
 
@@ -14,7 +14,7 @@ import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
-public class MyRSACrypto {
+public class MPRSACrypto {
     private static PublicKey getPublicKey(String base64PublicKey) {
         PublicKey publicKey = null;
 
@@ -42,7 +42,7 @@ public class MyRSACrypto {
 
         try {
             Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
-            cipher.init(Cipher.ENCRYPT_MODE, MyRSACrypto.getPublicKey(pubKey));
+            cipher.init(Cipher.ENCRYPT_MODE, MPRSACrypto.getPublicKey(pubKey));
             return new String(
                     Base64.encode(
                             cipher.doFinal(text.getBytes()),

@@ -20,7 +20,7 @@ dependencies {
 }
 // task to delete the old jar
 task deleteOldJar(type: Delete) {
-    delete'release/MyRSACrypto.jar'
+    delete'release/MPRSACrypto.jar'
 }
 
 // task to export contents as jar
@@ -29,7 +29,7 @@ task exportJar(type: Copy) {
     into('release')
     include('classes.jar')
     // name the plugin
-    rename('classes.jar','MyRSACrypto.jar')
+    rename('classes.jar','MPRSACrypto.jar')
 }
 
 exportJar.dependsOn(deleteOldJar, build)
